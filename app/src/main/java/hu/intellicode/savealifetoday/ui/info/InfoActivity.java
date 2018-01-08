@@ -10,18 +10,18 @@ import hu.intellicode.savealifetoday.ui.BaseActivity;
 
 
 public class InfoActivity extends BaseActivity {
-	@Override
-	protected void onCreate(@Nullable Bundle savedInstanceState) {
-		super.onCreate(savedInstanceState);
+    @Override
+    protected void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
 
-		View view = getLayoutInflater().inflate(R.layout.activity_info, contentContainer, false);
+        View view = getLayoutInflater().inflate(R.layout.activity_info, contentContainer, false);
 
-		Toolbar toolbar = view.findViewById(R.id.toolbar);
+        Toolbar toolbar = view.findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+        if (getSupportActionBar() != null) {
+            getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        }
 
-		setSupportActionBar(toolbar);
-
-		getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-
-		contentContainer.addView(view);
-	}
+        contentContainer.addView(view);
+    }
 }

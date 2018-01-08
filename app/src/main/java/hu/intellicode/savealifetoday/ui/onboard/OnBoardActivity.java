@@ -6,12 +6,11 @@ import android.support.v7.app.AppCompatActivity;
 
 import hu.intellicode.savealifetoday.R;
 
-
 public class OnBoardActivity extends AppCompatActivity {
-	@Override
-	protected void onCreate(@Nullable Bundle savedInstanceState) {
-		super.onCreate(savedInstanceState);
+    @Override
+    protected void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
 
-		setContentView(R.layout.activity_onboard);
-	}
+        setContentView(R.layout.activity_onboard);
+    }
 }
