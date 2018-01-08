@@ -12,38 +12,33 @@ import hu.intellicode.savealifetoday.ui.BaseActivity;
 
 public class MainActivity extends BaseActivity {
 
-	@Override
-	protected void onCreate(Bundle savedInstanceState) {
-		super.onCreate(savedInstanceState);
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
 
-		View view = getLayoutInflater().inflate(R.layout.activity_main, contentContainer, false);
+        View view = getLayoutInflater().inflate(R.layout.activity_main, contentContainer, false);
 
-		Toolbar toolbar = view.findViewById(R.id.toolbar);
+        Toolbar toolbar = view.findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+        if (getSupportActionBar() != null) {
+            getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        }
 
-		setSupportActionBar(toolbar);
+        contentContainer.addView(view);
+    }
 
-		getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.menu_main, menu);
+        return super.onCreateOptionsMenu(menu);
+    }
 
-		contentContainer.addView(view);
-	}
-
-	@Override
-	public boolean onCreateOptionsMenu(Menu menu) {
-
-		getMenuInflater().inflate(R.menu.menu_main, menu);
-
-		return super.onCreateOptionsMenu(menu);
-	}
-
-	@Override
-	public boolean onOptionsItemSelected(MenuItem item) {
-
-		if (item.getItemId() == R.id.menu_main_test) {
-			Toast.makeText(this, "YAY", Toast.LENGTH_SHORT).show();
-
-			return true;
-		}
-
-		return super.onOptionsItemSelected(item);
-	}
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        if (item.getItemId() == R.id.menu_main_test) {
+            Toast.makeText(this, "YAY", Toast.LENGTH_SHORT).show();
+            return true;
+        }
+        return super.onOptionsItemSelected(item);
+    }
 }

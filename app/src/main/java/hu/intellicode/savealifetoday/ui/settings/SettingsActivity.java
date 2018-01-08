@@ -8,21 +8,20 @@ import android.view.View;
 import hu.intellicode.savealifetoday.R;
 import hu.intellicode.savealifetoday.ui.BaseActivity;
 
-
 public class SettingsActivity extends BaseActivity {
 
-	@Override
-	protected void onCreate(@Nullable Bundle savedInstanceState) {
-		super.onCreate(savedInstanceState);
+    @Override
+    protected void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
 
-		View view = getLayoutInflater().inflate(R.layout.activity_settings, contentContainer, false);
+        View view = getLayoutInflater().inflate(R.layout.activity_settings, contentContainer, false);
 
-		Toolbar toolbar = view.findViewById(R.id.toolbar);
+        Toolbar toolbar = view.findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+        if (getSupportActionBar() != null) {
+            getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        }
 
-		setSupportActionBar(toolbar);
-
-		getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-
-		contentContainer.addView(view);
-	}
+        contentContainer.addView(view);
+    }
 }
